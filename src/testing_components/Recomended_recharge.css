@@ -1,0 +1,115 @@
+.pricing-card {
+          display: flex;
+          flex-direction: column;
+          background: linear-gradient(to top right, rgb(7 16 45), rgb(58 60 84));
+          border-radius: 1rem;
+          border: 1px solid rgba(255, 255, 255, 0.337);
+         
+          position: relative;
+          right: 6vw;
+          padding: 10px;
+          bottom: 0vh;
+          transition: all 0.5s ease ;
+          width: 14.5vw;
+          height: 40vh;
+          top: 40px;
+          
+          
+        }
+        
+        .pricing-card:hover{
+          transform: translateY(-3px);
+          background: linear-gradient(to top right,rgb(58 60 84), rgb(7 16 45) );
+
+        }
+        .price-card-content{
+          margin-top: 3vh;
+          
+        }
+
+        
+        .price{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          bottom: 2vh;
+        }
+        .price .price_value{
+          font-size: 2.2rem;
+          font-weight: 700;
+          position: relative;
+          top: 10px;
+        }
+        .price .quantity{
+          font-size: 1rem;
+          position: relative;
+          top: 18px;
+          color:  #a0a0a0;;
+        }
+        .pricing-card  .title{
+          position: relative;
+          bottom: 2vh;
+          display: block;
+        }
+       
+        .pricing-card  .title h3{
+          font-size: 1.2rem;
+          font-family:"DM Serif Text";
+          padding: 10px;
+          font-style: normal; 
+          line-height: 2rem;
+          letter-spacing: 0.8px;
+        }
+        .pricing-card  .title p{
+          font-size: .85rem;
+          margin-left: 1vw;
+          font-weight: 100;
+          font-style:oblique;
+          color: #a0a0a0;
+          margin-top: 20px;
+        }
+        .pricing-footer{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          bottom: 0vh;
+        }
+        
+        
+       
+        
+        
+        
+        .pricing-button:hover {
+          background-color: transparent;
+          color: rgb(28, 27, 65);
+          color: azure;
+        }
+        .pricing-button {
+          display: inline-block;
+          width: 12rem;
+          height: 2.5rem;
+          background: linear-gradient(180deg, #5771a5, #000);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.38), 
+                      0px 10px 40px -10px rgba(0, 0, 0, 0.65), 
+                      0px 12px 45px -15px rgba(0, 0, 0, 0.44);
+          border-bottom: 3px solid #374e72;
+          border-radius: 12px;
+          color: white;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          text-shadow: 1px 1px black, 0 0 9px white;
+          text-decoration: none;
+          text-align: center;
+          line-height: 2.5rem;
+          transition: box-shadow 0.3s ease;
+          margin-top: 20px;
+        }
+        
+        .pricing-button:hover {
+          box-shadow: none;
+        }
+        

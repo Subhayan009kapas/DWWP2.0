@@ -1,0 +1,103 @@
+.admin-dashboard-whole-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8vw;
+  max-width: 70vw;
+  margin-left: 20vw;
+}
+
+
+.admin-dashboard-container {
+          width: 90%;
+          margin: 20px auto;
+          font-family: Arial, sans-serif;
+          padding: 40px;
+          background-color: rgb(5, 5, 25);
+          box-shadow: 0 4px 12px rgba(194, 190, 190, 0.1);
+         
+         
+         
+        }
+        
+        .admin-dashboard-title {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          text-transform: capitalize;
+        }
+        
+        .admin-dashboard-tabs {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 20px;
+        }
+        .admin-dashboard-tabs button:active{
+          
+          box-shadow: 0 2px #666;
+          transform: translateY(4px);
+
+        }
+        
+        .admin-dashboard-tab {
+          background: linear-gradient(to top right, rgb(7 16 45), rgb(58 60 84));
+          border: none;
+          padding: 10px 15px;
+          cursor: pointer;
+          font-size: 14px;
+          border-radius: 5px;
+          color: aliceblue;
+        }
+        .admin-dashboard-tab:hover{
+          background-color: black;
+        }
+     
+        .admin-dashboard-tab.active {
+          background-color: #d6d6d6;
+          font-weight: bold;
+          box-shadow: 0 2px #666;
+          transform: translateY(4px);
+        }
+        
+        .admin-dashboard-stats-cards {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 15px;
+          margin-bottom: 30px;
+        }
+        
+        .admin-dashboard-card {
+          background: linear-gradient(to top right, rgb(7 16 45), rgb(58 60 84));
+          padding: 15px;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          text-align: center;
+        }
+        
+        .admin-dashboard-card h3 {
+          font-size: 22px;
+          margin: 5px 0;
+        }
+        
+        .admin-dashboard-card p {
+          font-size: 12px;
+          color: gray;
+        }
+        
+        .admin-dashboard-chart-container {
+          background: #0f2c69;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          /* From https://css.glass */
+/* From https://css.glass */
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.05);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(9.9px);
+-webkit-backdrop-filter: blur(9.9px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        

@@ -1,0 +1,67 @@
+.top-up_card{
+    width: 180px;
+    background: linear-gradient(to top right, rgb(7 16 45), rgb(58 60 84));
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgb(84 90 106);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.small-text {
+    color: #488aec;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.title {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.fixed-amount {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.dropdown select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(84 90 106);
+    background: #0d1b3d;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+}
+.dropdown label{
+    color:#ffffff84;
+}
+
+.topup-button {
+    background-color: #488aec;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.topup-button:hover {
+    background-color: #3576c4;
+}

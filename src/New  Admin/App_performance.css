@@ -1,0 +1,78 @@
+.App_performance-container {
+          padding: 20px;
+          font-family: Arial, sans-serif;
+          margin-left: 20vw;
+          padding: 40px;
+          background-color: #08081a;
+          box-shadow: 0 4px 12px rgba(194, 190, 190, 0.1);
+          width: 70%;
+          border-radius: 1.5rem;
+          margin-top: 5vh;
+          
+       
+          
+        }
+        
+        .App_performance-title {
+          font-size: 24px;
+          font-weight: bold;
+          margin-left: 8.5vw;
+        
+        }
+        
+        .App_performance-tabs {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 20px;
+        }
+        
+        .App_performance-tab {
+          background: linear-gradient(to top right, rgb(7 16 45), rgb(58 60 84));
+          padding: 10px;
+          border: none;
+          cursor: pointer;
+       
+          border-radius: 5px;
+          position: relative;
+          left: 8vw;
+          color: #fff;
+        }
+      
+        .App_performance-tab.active {
+          
+          box-shadow: 0 2px #666;
+          transform: translateY(4px);
+          font-weight: 700;
+        }
+        
+        .App_performance-cards {
+          width: 100%;
+          display: flex;
+          gap: 50px;
+          flex-wrap: wrap;
+         
+         
+        }
+        
+        .App_performance-card {
+  
+          background: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          width: 35%;
+          position: relative;
+          left: 8vw;
+          background: rgba(255, 255, 255, 0.05);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(9.9px);
+-webkit-backdrop-filter: blur(9.9px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .App_performance-card h2{
+          color: #1591EA;
+        }
+        .App_performance-card p{
+          color: rgba(181, 177, 177, 0.77);
+        }

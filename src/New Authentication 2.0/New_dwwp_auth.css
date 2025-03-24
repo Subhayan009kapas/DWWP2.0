@@ -1,0 +1,243 @@
+/* Glassmorphism Effect on the Whole Container */
+.new_dwwp_auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  /* From https://css.glass */
+}
+.new_dwwp_auth-sub-con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* From https://css.glass */
+  /* From https://css.glass */
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.165);
+  height: 85vh;
+  width: 80vw;
+}
+
+/* Left: Image Slider */
+.new_dwwp_auth-slider {
+  width: 40%;
+  height: 490px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.new_dwwp_auth-slider img{
+  height: 500px;
+}
+
+.new_dwwp_auth-slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Image Indicator Dots */
+.new_dwwp_auth-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: white;
+}
+
+/* Right: Form Card */
+.new_dwwp_auth-card {
+  width: 35%;
+  background: linear-gradient(to top right, rgb(7 16 45), rgb(58 60 84));
+  backdrop-filter: blur(15px);
+  padding: 2rem;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+ 
+}
+
+/* Role Buttons */
+.new_dwwp_auth-role-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.new_dwwp_auth-btn {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  background: gray;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 5px;
+  transition: background 0.3s;
+}
+
+.new_dwwp_auth-btn.active {
+  background: #6a5acd;
+}
+
+.new_dwwp_auth-link {
+  color: #6a5acd;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Form */
+.new_dwwp_auth-form input {
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 70%;
+  background-color: rgb(46, 44, 44);
+}
+
+.new_dwwp_auth-submit-btn {
+  padding: 14px;
+  background: #6a5acd;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 75%;
+}
+
+/* Social Buttons */
+.new_dwwp_auth-social-btn {
+  padding: 14px;
+  border: none;
+  background: #075386;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 70%;
+  font-weight: 200;
+}
+
+.new_dwwp_auth-social-btn i {
+  margin-right: 10px;
+}
+
+
+/* Add loader styles at the end of your existing CSS */
+.loading-wave {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.loading-bar {
+  width: 12px;
+  height: 8px;
+  margin: 0 3px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  animation: loading-wave-animation 1s ease-in-out infinite;
+}
+
+.loading-bar:nth-child(2) { animation-delay: 0.1s; }
+.loading-bar:nth-child(3) { animation-delay: 0.2s; }
+.loading-bar:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes loading-wave-animation {
+  0% { height: 8px; }
+  50% { height: 25px; }
+  100% { height: 8px; }
+}
+/* Loader Overlay Styles */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-wave {
+  width: 300px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.loading-bar {
+  width: 22px;
+  height: 10px;
+  margin: 0 8px;
+  background-color: #0f79e2;
+  border-radius: 5px;
+  animation: loading-wave-animation 2s ease-in-out infinite;
+}
+
+.loading-bar:nth-child(2) { animation-delay: 0.1s; }
+.loading-bar:nth-child(3) { animation-delay: 0.2s; }
+.loading-bar:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes loading-wave-animation {
+  0% { height: 10px; }
+  50% { height: 60px; }
+  100% { height: 10px; }
+}
+.back_to_land{
+ 
+  position: relative;
+  z-index: 200;
+   bottom: 34vh;
+   background: #075386;
+   padding: 10px 30px;
+   left: 8vw;
+   font-weight: bold;
+   font-size: 1rem;
+   background: linear-gradient(to top right, rgb(7 16 45), #075386);
+   color: rgba(240, 248, 255, 0.777);
+   border-radius: 10px;
+   cursor: pointer;
+   background: linear-gradient(180deg, #5771a5, #000);
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.38), 
+               0px 10px 40px -10px rgba(0, 0, 0, 0.65), 
+               0px 12px 45px -15px rgba(0, 0, 0, 0.44);
+   border-bottom: 3px solid #374e72;
+  
+}
+.back_to_land:hover{
+  box-shadow: none;
+}

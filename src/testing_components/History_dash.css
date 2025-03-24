@@ -1,0 +1,176 @@
+.card {
+  width: 150px;
+  background-color: rgb(7 16 45);
+  background: linear-gradient(to top right, rgb(7 16 45), rgb(58 60 84));
+  background: -webkit-linear-gradient(
+    to top right,
+    rgb(7 16 45),
+    rgb(58 60 84)
+  );
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgb(84 90 106);
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title img{
+  height: 100px;
+  position: relative;
+  bottom: 20px;
+
+}
+
+.small-text,
+.title,
+.desc {
+  font-weight: 600;
+}
+
+.title,
+.desc {
+  margin: 5px 0;
+}
+.desc{
+  text-align: center;
+  position: relative;
+  bottom: 20px;
+}
+.small-text {
+  color: #488aec;
+  font-size: 14px;
+}
+
+.title {
+  color: #fff;
+  font-size: 26px;
+  line-height: 26px;
+}
+
+.desc {
+  color: rgb(151 153 167);
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.water-recharge-btn .button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 3px;
+  text-decoration: none;
+  
+}
+.button-container{
+  position: relative;
+  bottom: 15px;
+
+}
+.button:first-child {
+  box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
+  background-color: #488aec;
+}
+
+.button:last-child {
+  box-shadow: 0 4px 6px -1px #0b162531, 0 2px 4px -1px #0e192b17;
+  background-color: #fff;
+}
+
+.icon {
+  height: 25px;
+  width: 25px;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.icon svg:last-child {
+  fill: #000;
+}
+
+.button-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+}
+
+.button-text span:first-child {
+  font-size: 5px;
+  font-weight: 600;
+}
+
+.google span:first-child {
+  color: rgb(219 206 253);
+}
+
+.apple span:first-child {
+  color: rgb(81 87 108);
+}
+
+.google span:last-child {
+  color: #fff;
+  font-weight: 800;
+}
+
+.apple span:last-child {
+  color: #000;
+  font-weight: 800;
+}
+
+.button-container {
+  position: relative;
+  display: inline-block;
+}
+.button-container .water-recharge-btn{
+  width: 8.2rem;
+  height: 3rem;
+  background: linear-gradient(180deg, #5771a5, #000);
+  box-shadow: 0px 4px 10px #00000062, 0px 10px 40px -10px #000000a6,
+    0px 12px 45px -15px #00000071;
+  transition: all 0.3s ease;
+  border-bottom: solid 3px #374e72;
+  border-radius: 16px;
+  color: #fff;
+  text-shadow: 1px 1px #000, 0 0 9px #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+.button-container .water-recharge-btn:hover {
+  box-shadow: none;
+}
+.view-full-history-btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.view-full-history-btn span{
+  font-size: 14px;
+  font-weight: 700;
+  color: #0a8be7;
+ 
+  text-align: right;
+  transition: all 0.5s ease;
+}
+.view-full-history-btn span:hover{
+  color: #bec3cc;
+  
+}

@@ -1,0 +1,113 @@
+.main-admin{
+          width: 80vw;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          background: #0f0f1e;
+          /* background: blueviolet; */
+          padding: 20px;
+
+}
+body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+         background: #0f0f1e;
+        }
+        
+        .admin_main-con {
+          display: flex;
+          height: 100vh;
+        }
+        
+        .admin-sidebar {
+          position : fixed ; 
+          left: 0 ;
+          top: 0;
+          height: 95vh;
+          width: 250px;
+          background-color: #1e293b;
+          color: white;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          font-weight: 700;
+        }
+        
+        .admin-sidebar .logo {
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 25px;
+         
+          
+        }
+        .admin-sidebar .logo img{
+          height: 180px;
+          border-radius: 30px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          background: #0f0f1e;;
+         
+        }
+        
+        nav ul {
+          list-style: none;
+          padding: 0;
+          
+        }
+      
+        
+        nav ul li {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          gap: 20px;
+          background-color:  #1e293b;
+          /* background-color:  #334155; */
+          padding: 10px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background 0.3s ease;
+          text-decoration: none;
+          
+        }
+        
+        nav ul li.active, 
+        nav ul li:hover {
+          background-color: #334155;
+          /* background-color:  #1e293b; */
+        }
+        
+      
+        .settings {
+          margin-top: auto;
+          padding: 10px;
+          border-top: 1px solid #475569;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+        }
+
+
+
+
+        .admin-sidebar ul li {
+          padding: 10px;
+          color: white;
+          transition: 0.3s;
+        }
+        
+        .admin-sidebar ul li:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .admin-sidebar ul .active li {
+          background-color: #5052554f; /* Change this to your preferred active color */
+          color: white;
+          border-radius: 5px;
+        }
+        
+        

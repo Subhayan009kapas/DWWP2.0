@@ -1,0 +1,107 @@
+.Admin_see_UserFeedBack-container {
+          width: 70%;
+          margin: 20px auto;
+          font-family: Arial, sans-serif;
+          /* background: linear-gradient(to top right, rgb(7, 16, 45), rgb(58, 60, 84)); */
+          color: white;
+          padding: 20px;
+          border-radius: 10px;
+          background-color: #08081a;
+          box-shadow: 0 4px 12px rgba(194, 190, 190, 0.1);
+          position: relative;
+          left: 8vw;
+          
+        }
+        
+        .Admin_see_UserFeedBack-title {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          color: white;
+          text-transform: capitalize;
+          
+        }
+        
+        .Admin_see_UserFeedBack-tabs {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 20px;
+        }
+        
+        .Admin_see_UserFeedBack-tab {
+          background: linear-gradient(to top right, rgb(7 16 45), rgb(58 60 84));
+          border: none;
+          padding: 10px 15px;
+          cursor: pointer;
+          font-size: 14px;
+          border-radius: 5px;
+          color: white;
+        }
+        
+        .Admin_see_UserFeedBack-tab.active {
+          background-color: #4a4f68;
+          font-weight: bold;
+          box-shadow: 0 2px #666;
+          transform: translateY(4px);
+        }
+        
+        .Admin_see_UserFeedBack-card {
+          background: rgba(255, 255, 255, 0.1);
+          padding: 25px;
+          border-radius: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          margin-bottom: 20px;
+          backdrop-filter: blur(5px);
+        }
+        
+        .Admin_see_UserFeedBack-card h3 {
+          font-size: 22px;
+          margin: 5px 0;
+          color: white;
+        }
+        
+        .Admin_see_UserFeedBack-card p {
+          font-size: 14px;
+          color: lightgray;
+        }
+        
+        .Admin_see_UserFeedBack-feedback {
+          margin-top: 10px;
+          padding: 10px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .Admin_see_UserFeedBack-user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        
+        .Admin_see_UserFeedBack-avatar  {
+          width: 40px;
+          height: 40px;
+          background-color: gray;
+          border-radius: 50%;
+        }
+        .Admin_see_UserFeedBack-avatar img  {
+          width: 40px;
+          height: 40px;
+          background-color: gray;
+          border-radius: 50%;
+        }
+        
+        .Admin_see_UserFeedBack-name {
+          font-weight: bold;
+          color: white;
+        }
+        
+        .Admin_see_UserFeedBack-rating {
+          font-size: 14px;
+          color: gold;
+        }
+        
+        .Admin_see_UserFeedBack-comment {
+          margin-top: 5px;
+          color: lightgray;
+        }
+        

@@ -1,0 +1,149 @@
+.broadcast-container {
+          padding: 2rem;
+          min-height: 100vh;
+          background: #0a0f1f;
+          margin-left: 15vw;
+        }
+        
+        .broadcast-title {
+          color: #ffffff;
+          text-align: center;
+          margin-bottom: 2rem;
+          font-size: 2.2rem;
+          letter-spacing: 1px;
+        }
+        
+        .broadcast-card {
+          background: linear-gradient(145deg, rgb(7, 16, 45), rgb(58, 60, 84));
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 2rem;
+          border-radius: 15px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .broadcast-select{
+          background-color: #1976D2;
+        }
+        .form-group {
+          margin-bottom: 2rem;
+        }
+        
+        .form-group label {
+          display: block;
+          color: #a0a0a0;
+          margin-bottom: 0.8rem;
+          font-size: 0.95rem;
+        }
+        
+        .purpose-select {
+          width: 100%;
+          padding: 1rem;
+          background: rgba(52, 39, 39, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 8px;
+          color: white;
+          font-size: 1rem;
+          appearance: none;
+          transition: all 0.3s ease;
+          background-color: #0a0f1f;
+          
+        }
+        
+        .purpose-select:focus {
+          outline: none;
+          border-color: #2196F3;
+          box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+        }
+        
+        .message-box {
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 8px;
+          overflow: hidden;
+        }
+        
+        .message-header {
+          display: flex;
+          align-items: center;
+          padding: 1rem;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .message-icon {
+          font-size: 1.5rem;
+          margin-right: 1rem;
+        }
+        
+        .icon-input {
+          background: transparent;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          color: white;
+          padding: 0.3rem;
+          width: 40px;
+          text-align: center;
+          border-radius: 5px;
+          font-size: 1.2rem;
+        }
+        
+        .icon-input:focus {
+          outline: none;
+          border-color: #2196F3;
+        }
+        
+        .message-input {
+          width: 100%;
+          padding: 1rem;
+          background: transparent;
+          border: none;
+          color: white;
+          font-size: 1rem;
+          line-height: 1.5;
+          resize: vertical;
+          min-height: 150px;
+          margin-left: 6px;
+          margin-top: 2px;
+        }
+        
+        .message-input:focus {
+          outline: none;
+        }
+        
+        .send-button {
+          width: 100%;
+          padding: 1rem;
+          background: linear-gradient(45deg, #2196F3, #1976D2);
+          color: white;
+          border: none;
+          border-radius: 8px;
+          font-size: 1.1rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+        }
+        
+        .send-button:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+        
+        .send-button:hover:not(:disabled) {
+          opacity: 0.9;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+          .broadcast-container {
+            padding: 1.5rem;
+          }
+        
+          .broadcast-card {
+            padding: 1.5rem;
+          }
+        
+          .broadcast-title {
+            font-size: 1.8rem;
+          }
+        }

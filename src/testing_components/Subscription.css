@@ -1,0 +1,11 @@
+.top-up-con{
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          
+          margin-top: 10vh;
+          margin-left: 20vw;
+
+}

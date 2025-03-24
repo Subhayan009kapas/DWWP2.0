@@ -1,0 +1,175 @@
+.price-container {
+          padding: 2rem;
+          min-height: 100vh;
+          background: #0a0f1f;
+          margin-left: 15vw;
+        }
+        
+        .price-title {
+          color: #ffffff;
+          text-align: center;
+          margin-bottom: 2.5rem;
+          font-size: 2.2rem;
+          letter-spacing: 1px;
+        }
+        
+        .price-cards-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        
+        .price-card {
+          background: linear-gradient(145deg, rgb(7, 16, 45), rgb(58, 60, 84));
+          padding: 2rem;
+          border-radius: 15px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+          
+        }
+        
+        .price-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+        
+        .card-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1.5rem;
+        }
+        
+        .header-content {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+        
+        .price-icon {
+          font-size: 1.8rem;
+          background: rgba(255, 255, 255, 0.1);
+          padding: 0.8rem;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50px;
+          height: 50px;
+        }
+        
+        .current-price {
+          background: rgba(255, 255, 255, 0.05);
+          padding: 0.5rem 1rem;
+          border-radius: 8px;
+          font-weight: 600;
+          color: #2196F3;
+        }
+        
+        .card-description {
+          color: #a0a0a0;
+          font-size: 0.95rem;
+          line-height: 1.5;
+          margin-bottom: 1.5rem;
+          min-height: 60px;
+        }
+        
+        .input-group {
+          position: relative;
+          margin-bottom: 2rem;
+          display: flex;
+          align-items: center;
+        }
+        
+        .currency-symbol {
+          position: absolute;
+          left: 1rem;
+          color: #a0a0a0;
+          font-size: 1.2rem;
+          z-index: 1;
+        }
+        
+        .price-input {
+          width: 90%;
+          padding: 1rem 1rem 1rem 2.5rem;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 8px;
+          color: white;
+          font-size: 1.1rem;
+          transition: all 0.3s ease;
+        }
+        
+        .price-input:focus {
+          outline: none;
+          border-color: #2196F3;
+          box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+        }
+        
+        .input-unit {
+          position: absolute;
+          right: 1rem;
+          color: #a0a0a0;
+          font-size: 0.9rem;
+        }
+        
+        .save-btn {
+          width: 60%;
+          padding: 1rem;
+          background: linear-gradient(45deg, #2196F3, #1976D2);
+          color: white;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          font-weight: 500;
+          letter-spacing: 0.5px;
+          transition: all 0.3s ease;
+          margin-left: 6vw;
+          font-weight: 700;
+        }
+        
+        .save-btn.danger {
+          background: linear-gradient(45deg, #ff5252, #d32f2f);
+        }
+        
+        .save-btn:hover {
+          opacity: 0.9;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+        }
+        
+        .save-btn.danger:hover {
+          box-shadow: 0 4px 12px rgba(255, 82, 82, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+          .price-container {
+            padding: 1.5rem;
+          }
+          
+          .price-title {
+            font-size: 1.8rem;
+          }
+          
+          .price-cards-container {
+            grid-template-columns: 1fr;
+          }
+          
+          .price-card {
+            padding: 1.5rem;
+          }
+          
+          .card-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+          }
+          
+          .current-price {
+            width: 100%;
+            text-align: center;
+          }
+        }

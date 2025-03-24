@@ -1,0 +1,33 @@
+.top-bar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px;
+          border-bottom: 1px solid #e2e8f070;
+        }
+        
+        .notificatio-profile {
+          display: flex;
+          align-items: center;
+          gap: 15px; /* Adds space between notification icon and user profile */
+          margin-left: auto; /* Pushes the container to the right */
+        }
+        
+        .notification-icon {
+          display: flex;
+          align-items: center;
+        }
+        
+        .user-profile {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        
+        .user-icon {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        

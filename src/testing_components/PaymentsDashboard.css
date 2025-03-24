@@ -1,0 +1,259 @@
+
+
+.paymentDashboard-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background: linear-gradient(to top right, rgb(7 16 45), rgb(58 60 84));
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  
+}
+.pay-con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+  margin-left: 18vw;
+  
+}
+.paymentDashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.paymentDashboard-header-left {
+  display: flex;
+  align-items: center; /* Ensures vertical alignment */
+  gap: 10px; /* Adds spacing between elements */
+}
+
+.paymentDashboard-header-left img {
+  width: 30px;
+  height: auto; /* Ensures the image scales properly */
+  display: block; /* Removes any unwanted extra spacing */
+}
+
+.paymentDashboard-header-left h2 {
+  color: #488AEC;
+  margin: 0; /* Removes any default margin */
+  font-size: 20px; /* Adjust the size as needed */
+  font-weight: 600; /* Makes it stand out */
+  white-space: nowrap; /* Prevents text from breaking into multiple lines */
+}
+
+.paymentDashboard-search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.paymentDashboard-search-container  input{
+  background-color: transparent;
+  border: 1px solid #488aec81;
+}
+.paymentDashboard-search-bar {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 100%;
+  max-width: 250px;
+}
+
+.paymentDashboard-filter-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+}
+.paymentDashboard-filter-btn:hover{
+  background-color: #6272a4;
+}
+
+.paymentDashboard-filter-btn {
+  background-color: #44475a;
+}
+
+.paymentDashboard-add-btn {
+  background-color: #6272a4;
+}
+.paymentDashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Styling for table header */
+.paymentDashboard-table thead {
+  border-bottom: 2px solid #444; /* Adds a bottom border under the header */
+  color: #ffffff; /* Change this to your desired text color for the header */
+  background-color: #333; /* Optional: Add a background color to distinguish */
+}
+
+.paymentDashboard-table th {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #444; /* Ensures the border applies to the header */
+}
+
+/* Styling for table body */
+.paymentDashboard-table tbody {
+  color: #488AEC; /* Change this to your desired text color for the body */
+}
+
+.paymentDashboard-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+  color: white;
+}
+
+
+.paymentDashboard-pending {
+  color: #ffb86c;
+}
+
+.paymentDashboard-completed {
+  color: #50fa7b;
+}
+
+.paymentDashboard-action-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+}
+.paymentDashboard-action-btn:hover{
+  background-color: #6272a4;
+}
+
+
+.paymentDashboard-action-cell {
+  position: relative;
+}
+
+.paymentDashboard-action-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+/* Dropdown Styling */
+.dropdown-menu {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: #2c2f36;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.451);
+  border: 1px solid #6273a495;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show dropdown when active */
+.dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #e0e0e0;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+}
+
+.dropdown-option-button{
+  background-color: transparent;
+  &:hover{
+    background-color: transparent;
+  }
+ }
+
+
+.dropdown-option:hover {
+  background: #488aec50;
+  color: #fff;
+}
+.dropdown-option input {
+  display: none;
+}
+
+.dropdown-option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #e0e0e0;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+}
+
+/* Change background when selected */
+.dropdown-option:has(input:checked) {
+  background: #488aeca0;
+  color: #fff;
+}
+
+
+/* Glider Animation */
+.glider-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(50, 50, 50, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  width: 2px;
+}
+
+.glider {
+  position: relative;
+  height: 50%;
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0%,
+    #488AEC 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  transition: transform 0.5s cubic-bezier(0.37, 1.95, 0.66, 0.56);
+}
+
+/* Subtle dropdown fade-in */
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  
+
+
