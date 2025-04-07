@@ -102,7 +102,9 @@
           font-weight: 700;
           letter-spacing: 0.5px;
           transition: all 0.3s ease;
-          margin-left: 2vw;
+          position: relative;
+          right: 2vw;
+         
           
         }
         

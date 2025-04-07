@@ -119,7 +119,7 @@ const TopBar = () => {
                 </button>
               </div>
               <form onSubmit={handleSubmit} className="profile-form">
-                <div className="form-group">
+                {/* <div className="form-group">
                   <label>Name:</label>
                   <input
                     type="text"
@@ -127,7 +127,7 @@ const TopBar = () => {
                     value={userDetails.name}
                     onChange={handleInputChange}
                   />
-                </div>
+                </div> */}
                 <div className="form-group">
                   <label>Address:</label>
                   <input

@@ -67,12 +67,14 @@ function App() {
                 element={<PaymentsDashboard userId={email} />}
               />
               <Route path="topup" element={<Subscription userId={email} />} />
-              <Route
+              {/* <Route
                 path="onlineStatus"
                 element={
                   <Online_Status userId={email} status="offline" days={14} />
+                  
                 }
-              />
+              /> */}
+              <Route path="onlineStatus" element={<UserSettingsSection userId={email} status="offline" days={14}/>}/>
               <Route
                 path="dashboard"
                 element={<DashboardCard userId={email} />}

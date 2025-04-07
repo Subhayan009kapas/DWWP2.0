@@ -1,259 +1,572 @@
+/* PaymentsDashboard.css */
 
-
-.paymentDashboard-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 20px auto;
-  background: linear-gradient(to top right, rgb(7 16 45), rgb(58 60 84));
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  
-}
-.pay-con{
+/* Main Container Styles */
+.pay-con {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10vh;
   margin-left: 18vw;
-  
+  width: calc(100% - 18vw);
 }
+
+.paymentDashboard-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0px auto;
+  background: linear-gradient(to top right, rgb(7 16 45), rgb(58 60 84));
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  min-height: 70vh;
+  margin-bottom: 15vh;
+}
+
+/* Header Section */
 .paymentDashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+  gap: 1.5rem;
 }
+
 .paymentDashboard-header-left {
   display: flex;
-  align-items: center; /* Ensures vertical alignment */
-  gap: 10px; /* Adds spacing between elements */
+  align-items: center;
+  gap: 1rem;
 }
 
 .paymentDashboard-header-left img {
-  width: 30px;
-  height: auto; /* Ensures the image scales properly */
-  display: block; /* Removes any unwanted extra spacing */
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(0 2px 4px rgba(72, 138, 236, 0.3));
 }
 
 .paymentDashboard-header-left h2 {
   color: #488AEC;
-  margin: 0; /* Removes any default margin */
-  font-size: 20px; /* Adjust the size as needed */
-  font-weight: 600; /* Makes it stand out */
-  white-space: nowrap; /* Prevents text from breaking into multiple lines */
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(72, 138, 236, 0.2);
 }
 
+/* Search and Filter Controls */
 .paymentDashboard-search-container {
   display: flex;
+  gap: 1rem;
   align-items: center;
-  gap: 10px;
 }
-.paymentDashboard-search-container  input{
-  background-color: transparent;
-  border: 1px solid #488aec81;
-}
+
 .paymentDashboard-search-bar {
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  width: 100%;
-  max-width: 250px;
-}
-
-.paymentDashboard-filter-btn {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 0.75rem 1rem;
+  border: 1px solid #488aec81;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
   color: #fff;
+  width: 240px;
+  transition: all 0.3s ease;
 }
-.paymentDashboard-filter-btn:hover{
-  background-color: #6272a4;
+
+.paymentDashboard-search-bar:focus {
+  border-color: #488AEC;
+  box-shadow: 0 0 8px rgba(72, 138, 236, 0.3);
 }
 
 .paymentDashboard-filter-btn {
-  background-color: #44475a;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  background: #44475a;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.paymentDashboard-add-btn {
-  background-color: #6272a4;
+.paymentDashboard-filter-btn:hover {
+  background: #6272a4;
+  transform: translateY(-1px);
 }
+
+/* Table Styles */
 .paymentDashboard-table {
   width: 100%;
   border-collapse: collapse;
-}
-
-/* Styling for table header */
-.paymentDashboard-table thead {
-  border-bottom: 2px solid #444; /* Adds a bottom border under the header */
-  color: #ffffff; /* Change this to your desired text color for the header */
-  background-color: #333; /* Optional: Add a background color to distinguish */
+  margin-top: 1.5rem;
 }
 
 .paymentDashboard-table th {
-  padding: 12px;
+  padding: 1rem;
   text-align: left;
-  border-bottom: 2px solid #444; /* Ensures the border applies to the header */
-}
-
-/* Styling for table body */
-.paymentDashboard-table tbody {
-  color: #488AEC; /* Change this to your desired text color for the body */
+  background: rgba(72, 138, 236, 0.1);
+  color: #488AEC;
+  font-weight: 500;
+  border-bottom: 2px solid #2d3250;
 }
 
 .paymentDashboard-table td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #444;
-  color: white;
+  padding: 1rem;
+  color: #e0e0e0;
+  border-bottom: 1px solid #2d3250;
+  transition: background 0.2s ease;
 }
 
+.paymentDashboard-table tr:hover td {
+  background: rgba(72, 138, 236, 0.05);
+}
 
-.paymentDashboard-pending {
+/* Status Indicators */
+.status-pending {
   color: #ffb86c;
+  position: relative;
+  padding-left: 1.25rem;
 }
 
-.paymentDashboard-completed {
+.status-pending::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffb86c;
+  animation: pulse 1.5s infinite;
+}
+
+.status-completed {
   color: #50fa7b;
+  position: relative;
+  padding-left: 1.25rem;
 }
 
-.paymentDashboard-action-btn {
-  background: none;
-  border: none;
-  color: white;
+.status-completed::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #50fa7b;
+}
+
+/* Month Grouping */
+.month-header {
+  /* background: rgba(72, 138, 236, 0.08); */
+  /* background: rgba(255, 184, 108, 0.15); */
+  /* background: rgba(80, 250, 123, 0.15);  */
   cursor: pointer;
-  font-size: 18px;
+  transition: all 0.3s ease;
+
 }
-.paymentDashboard-action-btn:hover{
-  background-color: #6272a4;
+
+.month-header td {
+  padding: 1rem;
+  font-weight: 500;
+  /* color: #488AEC !important; */
+  /* color: #ffb86c !important;   */
+  color: #50fa7b !important; 
+}
+
+.month-header:hover {
+  background: rgba(72, 138, 236, 0.15);
 }
 
 
-.paymentDashboard-action-cell {
+
+/* Dropdown Styles */
+.action-cell {
   position: relative;
 }
 
-.paymentDashboard-action-btn {
+.action-btn {
   background: none;
   border: none;
-  font-size: 20px;
+  color: #fff;
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
-/* Dropdown Styling */
-.dropdown-menu {
+.action-btn:hover {
+  background: rgba(72, 138, 236, 0.1);
+}
+
+.dropdown {
   position: absolute;
-  top: 35px;
+  top: 100%;
   right: 0;
-  background: #2c2f36;
+  background: linear-gradient(25deg, #3a3c54, #2d3250);
   border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.451);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   border: 1px solid #6273a495;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  width: 140px;
-  z-index: 100;
+  padding: 0.5rem;
+  min-width: 160px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
 }
 
-/* Show dropdown when active */
-.dropdown-menu.active {
+.dropdown.active {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
-.dropdown-option {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  font-size: 15px;
-  cursor: pointer;
-  color: #e0e0e0;
-  transition: background 0.3s ease, color 0.3s ease;
-  border-radius: 4px;
-}
-
-.dropdown-option-button{
-  background-color: transparent;
-  &:hover{
-    background-color: transparent;
-  }
- }
-
-
-.dropdown-option:hover {
-  background: #488aec50;
-  color: #fff;
-}
-.dropdown-option input {
-  display: none;
-}
-
-.dropdown-option {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  font-size: 15px;
-  cursor: pointer;
-  color: #e0e0e0;
-  transition: background 0.3s ease, color 0.3s ease;
-  border-radius: 4px;
-}
-
-/* Change background when selected */
-.dropdown-option:has(input:checked) {
-  background: #488aeca0;
-  color: #fff;
-}
-
-
-/* Glider Animation */
-.glider-container {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(50, 50, 50, 1) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  width: 2px;
-}
-
-.glider {
-  position: relative;
-  height: 50%;
+.dropdown button {
   width: 100%;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0) 0%,
-    #488AEC 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  transition: transform 0.5s cubic-bezier(0.37, 1.95, 0.66, 0.56);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #e0e0e0;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
-/* Subtle dropdown fade-in */
-@keyframes dropdownFade {
+.dropdown button:hover {
+  background: rgba(72, 138, 236, 0.1);
+  color: #488AEC;
+}
+
+/* Loading and Empty States */
+.loading-container {
+  padding: 2rem;
+  text-align: center;
+  color: #488AEC;
+  font-size: 1.1rem;
+}
+
+.no-transactions {
+  padding: 2rem;
+  text-align: center;
+  color: #6272a4;
+  border: 2px dashed #2d3250;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 184, 108, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 184, 108, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 184, 108, 0); }
+}
+
+@media (max-width: 768px) {
+  .pay-con {
+    margin-left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .paymentDashboard-container {
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+  }
+  
+  .paymentDashboard-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .paymentDashboard-search-container {
+    flex-direction: column;
+  }
+  
+  .paymentDashboard-search-bar {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+
+
+
+
+.recharge-card {
+  background: linear-gradient(145deg, rgba(72,138,236,0.1), rgba(16,22,45,0.4));
+  border: 1px solid rgba(72,138,236,0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  margin-top: 2rem;
+  width: 70vw;
+  margin-left:20vw ;
+}
+
+.rc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.rc-header h3 {
+  color: #488AEC;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.rc-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6272a4;
+  font-size: 0.9rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-dot.pending { background: #ffb86c; }
+.status-dot.completed { background: #50fa7b; }
+
+.rc-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.rc-amount, .rc-due-date  , .rc-usage{
+  background: rgba(72,138,236,0.05);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.rc-label {
+  display: block;
+  color: #6272a4;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.rc-value {
+  color: #f8f8f2;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.rc-pay-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #488AEC, #6a5af9);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rc-pay-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(72,138,236,0.3);
+}
+
+.loading-recharge {
+  text-align: center;
+  color: #6272a4;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .rc-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+html {
+  overflow-y: scroll; /* Force scrollbar to be visible */
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+/* Track (the background) */
+::-webkit-scrollbar-track {
+  background: #1e1e1e; /* Dark background */
+  border-radius: 10px;
+}
+
+/* Handle (the draggable part) */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg,#3a3c54, #2d3250);
+}
+
+
+
+
+
+
+
+/* Transaction Modal */
+.transaction-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.transaction-modal {
+  background: linear-gradient(145deg, rgba(7,16,45,0.95), rgba(58,60,84,0.95));
+  border: 1px solid rgba(72,138,236,0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.transaction-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(72,138,236,0.2);
+  padding-bottom: 1rem;
+}
+
+.modal-header h3 {
+  color: #488AEC;
+  margin: 0;
+}
+
+.transaction-close-button {
+  background: none;
+  border: none;
+  color: #6272a4;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #488AEC;
+}
+
+.transaction-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(72,138,236,0.05);
+  border-radius: 8px;
+}
+
+.detail-label {
+  color: #6272a4;
+  font-size: 0.9rem;
+}
+
+.detail-value {
+  color: #f8f8f2;
+  font-weight: 500;
+}
+
+.transaction-modal-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.download-button, .close-modal-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-button {
+  background: linear-gradient(135deg, #488AEC, #6a5af9);
+  color: white;
+}
+
+.transaction-close-modal-button {
+  border-radius: 5px;
+  background: #e71a1a; /* Solid red */
+  color: white; /* White text for better contrast */
+  border: 1px solid rgba(72, 138, 236, 0.2);
+  padding: 8px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.transaction-close-modal-button:hover {
+  background: #c91414; /* Slightly darker red on hover */
+}
+
+
+.download-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(72,138,236,0.3);
+}
+
+.close-modal-button:hover {
+  background: rgba(255,255,255,0.15);
+  color: #488AEC;
+}
+.no-results {
+  text-align: center;
+  color: #ff4d4d; /* Soft red for visibility */
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 15px;
+  /* background: rgba(255, 77, 77, 0.1); */
+  /* border: 1px solid rgba(255, 77, 77, 0.3); */
+  border-radius: 8px;
+}
+
+
+/* Animation */
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-15px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-  
 
 

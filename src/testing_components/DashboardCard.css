@@ -48,12 +48,12 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   margin: 0 auto;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  width: 700px;
+  width: 40vw;
   height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
+  overflow: hidden; 
   position: relative;
   left: 5vw;
   top: 2vh;
@@ -445,8 +445,8 @@
 }
 
 .second-row .com-box {
-  height: 68px;
-  width: 350px;
+  height: 65px;
+  width: 230px;
   background-color: #b2ebf2;
   position: relative;
   z-index: 2222;
@@ -455,6 +455,7 @@
   border-radius: 10px;
   transition: all 0.3s ease;
   cursor: pointer;
+  display: flex;
 }
 .second-row .com-box:hover {
   transform: translateY(-3px);
@@ -472,8 +473,8 @@
   letter-spacing: 0.5px;
   padding: 10px;
   position: relative;
-  left: 5px;
-  bottom:2rem;
+  /* left: 5px;
+  bottom: 16px; */
   color: #a0a0a0;
 }
 
@@ -649,14 +650,8 @@ backdrop-filter: blur(5px);
   width: 80%;
   border-radius: 1rem;
    box-shadow: 5px 5px 10px black,inset -5px -5px 10px #1e1e1e;
+   position: relative;
 
- 
- 
+   left: 4rem;
+   bottom: 1.5rem;
 }
-/* .bar-container{
-  width: 70%;
-  border-radius: 1rem;
-   box-shadow: 5px 5px 10px black,inset -5px -5px 10px #1e1e1e;
-} */
-
-

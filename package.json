@@ -12,13 +12,16 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "chart.js": "^4.4.8",
+    "date-fns": "^4.1.0",
     "firebase": "^11.4.0",
     "framer-motion": "^12.4.7",
+    "jspdf": "^3.0.1",
     "lucide-react": "^0.477.0",
     "md5": "^2.3.0",
     "react": "^19.0.0",
     "react-chartjs-2": "^5.3.0",
     "react-dom": "^19.0.0",
+    "react-firebase-hooks": "^5.1.1",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.2.0"
   },

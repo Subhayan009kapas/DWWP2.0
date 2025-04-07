@@ -61,51 +61,76 @@
 
 // export default NotificationDropdown;
 
-// User Side: Notification Dropdown
-import { useEffect, useState } from "react";
-import { db } from "../firebaseConfig";
-import { doc, getDoc } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
 import "./NotificationDropdown.css";
+import { db } from "../firebaseConfig"; // Adjust path as needed
+import { doc, getDoc } from "firebase/firestore";
 
-const NotificationDropdown = ({ isOpen, onClose, userEmail }) => {
+const NotificationDropdown = ({ isOpen, onClose }) => {
   const [notifications, setNotifications] = useState([]);
 
   useEffect(() => {
-    if (userEmail) {
-      const fetchNotifications = async () => {
-        try {
-          const userRef = doc(db, "users", userEmail);
-          const userSnap = await getDoc(userRef);
-          if (userSnap.exists() && userSnap.data().notification) {
-            setNotifications([userSnap.data().notification]);
-          }
-        } catch (error) {
-          console.error("Error fetching notifications: ", error);
+    const fetchNotifications = async () => {
+      try {
+        const docRef = doc(db, "admin", "broadcast");
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          const msgArray = docSnap.data().msg || [];
+          // Sort messages by timestamp (latest first)
+          const sorted = msgArray.sort((a, b) => b.timestamp?.seconds - a.timestamp?.seconds);
+          setNotifications(sorted);
+        } else {
+          console.log("No broadcast document found.");
         }
-      };
-      fetchNotifications();
-    }
-  }, [userEmail]);
+      } catch (error) {
+        console.error("Error fetching notifications:", error);
+      }
+    };
+
+    fetchNotifications();
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (isOpen && !e.target.closest(".notification-dropdown") && !e.target.closest(".notification-icon")) {
+        onClose();
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
   return (
     <div className="notification-dropdown">
-      <h4>Notifications</h4>
-      {notifications.length > 0 ? (
-        notifications.map((notification, index) => (
-          <div key={index} className="notification-item">
-            <span>{notification.icon}</span>
-            <p>{notification.message}</p>
-            <span>{new Date(notification.timestamp).toLocaleString()}</span>
-          </div>
-        ))
-      ) : (
-        <p>No notifications</p>
-      )}
+      <div className="notification-header">
+        <h4>Notifications</h4>
+        <button className="mark-all-read">Mark all as read</button>
+      </div>
+      <div className="notification-list">
+        {notifications.length > 0 ? (
+          notifications.map((notification, index) => (
+            <div key={index} className="notification-item">
+              <div className="notification-icon">
+                <span>{notification.icon || "🔔"}</span>
+              </div>
+              <div className="notification-content">
+                <p>{notification.message || "No message"}</p>
+                <span className="notification-time">
+                  {notification.timestamp?.seconds
+                    ? new Date(notification.timestamp.seconds * 1000).toLocaleString()
+                    : "Just now"}
+                </span>
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="no-notifications">No notifications</div>
+        )}
+      </div>
     </div>
   );
 };
 
 export default NotificationDropdown;
-

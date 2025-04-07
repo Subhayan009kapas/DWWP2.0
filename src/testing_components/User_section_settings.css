@@ -1,151 +1,172 @@
 .settings-container {
-          max-width: 800px;
-          margin: 2rem auto;
-          padding: 20px;
-          position: relative;
-          left: 5vw;
-        }
-        
-        .settings-card {
-          background: linear-gradient(to top right, rgb(7 16 45), rgb(58 60 84));
-          border-radius: 15px;
-          padding: 25px;
-          margin-bottom: 20px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .settings-card h2 {
-          color: #fff;
-          margin-bottom: 1.5rem;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
-        
-        .input-group {
-          margin-bottom: 1.5rem;
-        }
-        
-        .input-group label {
-          display: block;
-          color: #a0aec0;
-          margin-bottom: 8px;
-        }
-        
-        .password-input {
-          position: relative;
-          display: flex;
-          align-items: center;
-          
-        }
-        
-        .password-input input {
-          width: 100%;
-          padding: 12px;
-          background: rgba(255, 255, 255, 0.1);
-          border: none;
-          border-radius: 8px;
-          color: white;
-          padding-right: 40px;
-        }
-        
-        .eye-toggle {
-          position: absolute;
-          right: 10px;
-          background: none;
-          border: none;
-          color: #a0aec0;
-          cursor: pointer;
-          padding: 5px;
-        }
-        
-        .update-btn {
-          background: #4299e1;
-          color: white;
-          border: none;
-          padding: 12px 35px;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          margin-top: 15px;
-          margin-left: 5vw;
-        }
-        
-        .update-btn:hover {
-          background: #3182ce;
-        }
-        
-        .update-btn:disabled {
-          background: #4a5568;
-          cursor: not-allowed;
-        }
-        
-        .toggle-group {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 1rem;
-        }
-        
-        .toggle-switch {
-          width: 50px;
-          height: 26px;
-          background: #4a5568;
-          border-radius: 13px;
-          position: relative;
-          cursor: pointer;
-          transition: background 0.3s ease;
-        }
-        
-        .toggle-switch.active {
-          background: #4299e1;
-        }
-        
-        .toggle-knob {
-          position: absolute;
-          width: 22px;
-          height: 22px;
-          background: white;
-          border-radius: 50%;
-          top: 2px;
-          left: 2px;
-          transition: transform 0.3s ease;
-        }
-        
-        .toggle-switch.active .toggle-knob {
-          transform: translateX(24px);
-        }
-        
-        .language-select {
-          width: 100%;
-          padding: 12px;
-          background: rgba(255, 255, 255, 0.1);
-          border: none;
-          border-radius: 8px;
-          color: white;
-          cursor: pointer;
-        }
-        
-        .theme-options {
-          display: flex;
-          gap: 15px;
-          margin-top: 10px;
-        }
-        
-        .theme-option {
-          padding: 12px 20px;
-          border-radius: 8px;
-          background: rgba(255, 255, 255, 0.1);
-          color: white;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-        
-        .theme-option.active {
-          background: #4299e1;
-          box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
-        }
-        
-        .theme-option:hover {
-          transform: translateY(-2px);
-        }
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 20px;
+  position: relative;
+  left: 5vw;
+}
+
+.settings-card {
+  display: flex;flex-direction: column;
+  align-items: center;
+  margin :0  2rem ; 
+  position: relative ;
+  background: linear-gradient(to top right, rgb(7 16 45), rgb(58 60 84));
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  left: 5vw;
+  top: 20vh;
+  height: 25vh;
+}
+
+.settings-card h2 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  color: #a0aec0;
+  margin-bottom: 8px;
+}
+
+.password-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+}
+
+.password-input input {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding-right: 40px;
+}
+
+.eye-toggle {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #a0aec0;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.update-btn {
+  background: #4299e1;
+  color: white;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  margin-left: 5vw;
+}
+
+.update-btn:hover {
+  background: #3182ce;
+}
+
+.update-btn:disabled {
+  background: #4a5568;
+  cursor: not-allowed;
+}
+
+.toggle-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.toggle-switch {
+  width: 50px;
+  height: 26px;
+  background: #4a5568;
+  border-radius: 13px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-switch.active {
+  background: #4299e1;
+}
+
+.toggle-knob {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+
+.toggle-switch.active .toggle-knob {
+  transform: translateX(24px);
+}
+
+.language-select {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.theme-options {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.theme-option {
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-option.active {
+  background: #4299e1;
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+}
+
+.theme-option:hover {
+  transform: translateY(-2px);
+}
+
+.device_and_pass{
+  /* background-color: #3182ce; */
+  display: flex;
+  flex-direction: row;
+}
+.instruction{
+  font-size: 13px;
+  font-family: Bungee Tint;
+  color: #81bbea;
+  position: relative;
+  bottom: 2vh;
+
+}

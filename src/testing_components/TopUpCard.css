@@ -33,19 +33,30 @@
     border-radius: 10px;
     margin: 10px 0;
 }
-
-.dropdown select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid rgb(84 90 106);
-    background: #0d1b3d;
-    color: #fff;
-    font-size: 16px;
-    outline: none;
-    cursor: pointer;
+.dropdown-x{
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgb(84 90 106);
+  background: #0d1b3d;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
 }
-.dropdown label{
+.dropdown-x select{
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgb(84 90 106);
+  background: #0d1b3d;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+  
+}
+.dropdown-x label{
     color:#ffffff84;
 }
 
@@ -65,3 +76,90 @@
 .topup-button:hover {
     background-color: #3576c4;
 }
+
+
+  /* Success Card Styles */
+.success-card-container{
+    position:fixed;
+    top: 0;
+    left: 0 ;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    background-color:#0f0f1e ;
+}
+  .success-card-payment{
+    position: relative;
+    max-width: 30vw;
+    margin: 0 auto;
+    background: linear-gradient(to top right, rgb(7, 16, 45), rgb(58, 60, 84));
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+    animation: fadeInUp 0.5s ease;
+    margin-top: 10vh;
+  }
+  
+  .success-icon {
+    margin: 1rem 0;
+  }
+  
+  .cancel-dialog-payment {
+    position: absolute;
+    top: 10px; /* ✅ Moves it to the top */
+    right: 30px; /* ✅ Moves it to the right */
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .cancel-dialog-payment:hover {
+    color: red; /* Optional: Changes color on hover */
+  }
+  .checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #4CAF50;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+  
+  .checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  }
+  
+  .checkmark {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: inline-block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+  }
+  
+  @keyframes stroke {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
