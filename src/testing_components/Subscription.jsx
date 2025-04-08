@@ -20,10 +20,10 @@ const Subscription = ({userId}) => {
         }}
       >
         <div className="top-up-cards">
-          <TopUpCard addon={"Summer"} price={20} Refill={50} userId = {userId}/>
-          <TopUpCard addon={"Standard"} price={50} Refill={80} userId = {userId}/>
-          <TopUpCard addon={"Party"} price={100} Refill={200} userId = {userId} />
-          <TopUpCard addon={"Festive"} price={150} Refill={300} userId = {userId} />
+          <TopUpCard  msg={" Beat the heat with "} addon={"Summer"} price={20} Refill={50} userId = {userId} url={"https://i.ibb.co/prRXnWpC/hot.png"}/>
+          <TopUpCard  msg={" Stay hydrated with "}  addon={"Standard"} price={50} Refill={80} userId = {userId} url={"https://i.ibb.co/8LgPc9nR/water-tap.png"}/>
+          <TopUpCard  msg={"Let the celebration flow: "} addon={"Party"} price={100} Refill={200} userId = {userId} url={"https://i.ibb.co/YFbyKhh2/party.png"} />
+          <TopUpCard  msg={" Enjoy the joy of festivals with "}  addon={"Festive"} price={150} Refill={300} userId = {userId}  url={"https://i.ibb.co/7dpYPvkp/festival.png"}/>
         </div>
       </motion.div>
 

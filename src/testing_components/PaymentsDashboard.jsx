@@ -57,6 +57,7 @@ const PaymentsDashboard = ({ userId }) => {
             month: yearMonth,
             type: "Addon",
             amount: `₹${(addonData.amount || [])[index] || 0}`,
+            qty: `${(addonData.quantityDone || [])[index] || 0}`,
             status: "Completed",
           }));
           
@@ -93,7 +94,9 @@ const PaymentsDashboard = ({ userId }) => {
   const filteredTransactions = React.useMemo(() => {
     const lowerSearch = searchTerm.toLowerCase();
     const lowerFilterStatus = filterStatus.toLowerCase(); // Normalize filter status
-  
+    
+    console.log(transactions);
+    
     return transactions.filter(transaction => {
       const matchesStatus =
         lowerFilterStatus === "all" || 
@@ -207,9 +210,10 @@ const PaymentsDashboard = ({ userId }) => {
               <tr>
                 <th>Transaction ID</th>
                 <th>Date</th>
-                <th>Month</th>
+                {/* <th>Month</th> */}
                 <th>Type</th>
                 <th>Amount</th>
+                <th>Qty</th>
                 <th>Status</th>
                 <th>Actions</th>
               </tr>
@@ -222,17 +226,22 @@ const PaymentsDashboard = ({ userId }) => {
                       <span className={`month-chevron ${expandedMonths[month] ? "expanded" : ""}`}>
                         <ChevronDown />
                       </span>
-                      {month} ({groupedTransactions[month].length} transactions)
+                      {month} (
+                      { groupedTransactions[month].filter((transaction) => transaction.status !== "pending").length} 
+                       transactions)
+
                     </td>
                   </tr>
 
-                  {expandedMonths[month] && groupedTransactions[month].map(transaction => (
+                  {expandedMonths[month] && groupedTransactions[month]
+                  .filter(transaction => transaction.status !== "pending") 
+                  .map(transaction => (
                     <tr key={transaction.id}>
                       <td>{transaction.id}</td>
                       <td>{new Date(transaction.date).toLocaleDateString()}</td>
-                      <td>{transaction.month}</td>
                       <td>{transaction.type}</td>
                       <td>{transaction.amount}</td>
+                      <td>{transaction.qty}</td>
                       <td className={`status-${transaction.status.toLowerCase()}`}>
                         {transaction.status}
                       </td>
@@ -315,6 +324,10 @@ const TransactionModal = ({ transaction, onClose }) => {
           <div className="detail-row">
             <span className="detail-label">Amount:</span>
             <span className="detail-value">{transaction.amount}</span>
+          </div>
+          <div className="detail-row">
+            <span className="detail-label">Qty:</span>
+            <span className="detail-value">{transaction.qty}</span>
           </div>
           <div className="detail-row">
             <span className="detail-label">Status:</span>

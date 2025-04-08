@@ -163,3 +163,267 @@
       transform: translateY(0);
     }
   }
+
+
+
+
+
+
+
+
+
+
+  /* TopUpCard.css */
+
+.top-up_card.festive-theme {
+  background-color: #0c1123;
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+  color: white;
+  width: 14vw;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.festive-label {
+  color: #77c5f5;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.water-icon {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.water-icon img{
+  height: 70px;
+}
+.subscription-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.quantity-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.quantity-selector .label {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.quantity-selector .controls {
+  display: flex;
+  background-color: #1f2937;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.quantity-selector .btn {
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.quantity-selector .count {
+  background-color: #111827;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  min-width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.add-btn {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.add-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Loader styles assumed to be separate */
+
+/* Success Card Styles */
+.success-card-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.success-card-payment {
+  background: white;
+  color: black;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.cancel-dialog-payment {
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.success-icon {
+  margin-bottom: 16px;
+}
+
+.checkmark {
+  width: 56px;
+  height: 56px;
+  stroke: #22c55e;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  animation: stroke 0.3s ease-in-out;
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: stroke 0.6s forwards;
+}
+
+.checkmark__check {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s 0.6s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+/* Success Card Styles */
+.success-card-container{
+  position:fixed;
+  top: 0;
+  left: 0 ;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  background-color:#0f0f1e ;
+}
+.success-card-payment{
+  position: relative;
+  max-width: 30vw;
+  margin: 0 auto;
+  background: linear-gradient(to top right, rgb(7, 16, 45), rgb(58, 60, 84));
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: center;
+  animation: fadeInUp 0.5s ease;
+  margin-top: 10vh;
+}
+
+.success-icon {
+  margin: 1rem 0;
+}
+
+.cancel-dialog-payment {
+  position: absolute;
+  top: 10px; /* ✅ Moves it to the top */
+  right: 30px; /* ✅ Moves it to the right */
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+.cancel-dialog-payment:hover {
+  color: red; /* Optional: Changes color on hover */
+}
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #4CAF50;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+

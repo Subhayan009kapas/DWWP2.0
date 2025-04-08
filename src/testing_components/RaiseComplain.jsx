@@ -135,7 +135,7 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./RaiseComplaint.css";
-
+import { motion } from "framer-motion";
 const RaiseComplaint = () => {
   // ... (keep all existing state variables and logic exactly the same)
   const [name, setName] = useState("");
@@ -192,7 +192,21 @@ const RaiseComplaint = () => {
   };
 
   return (
-    <div className="complaint-container">
+    <motion.div 
+    
+    
+    className="complaint-container"
+    initial={{ y: "-100vh", opacity: 0 }} // Start position (off-screen)
+    animate={{ y: 0, opacity: 1 }} // End position (fully visible)
+    transition={{
+      duration: 0.8, 
+      ease: [0.25, 1, 0.5, 1], // Smooth cubic bezier easing
+      type: "spring", // Spring effect for natural motion
+      stiffness: 100, // Controls the bounce
+      damping: 15, // Reduces excessive bouncing
+    }}
+    
+    >
       {!submitted ? (
         <div className="complaint-card">
           <h2>Raise a Complaint</h2>
@@ -265,7 +279,7 @@ const RaiseComplaint = () => {
               <p>Your complaint has been received. We will get back to you shortly.</p>
              </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

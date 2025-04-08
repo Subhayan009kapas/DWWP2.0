@@ -4,6 +4,7 @@
           min-height: 100vh;
           position: relative;
           left: 5vw;
+          z-index: 2000;
          
         
         }

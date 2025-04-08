@@ -247,7 +247,12 @@ const gobackToLand=()=>{
         </div>
       )}
       <div className="new_dwwp_auth-sub-con">
-      <button className="back_to_land" onClick={gobackToLand}><IoMdArrowRoundBack size={"20px"} style={{position:"relative", "top":"0.5vh"}} /> Back</button>
+      {/* <button className="back_to_land" onClick={gobackToLand}> Back</button> */}
+      <div className="back_to_land" onClick={gobackToLand}>
+      <img src="https://i.ibb.co/gM42nKZL/left-arrow.png"/>
+
+      </div>
+    
         
         {/* Image Slider Section */}
         <div className="new_dwwp_auth-slider">

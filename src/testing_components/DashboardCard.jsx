@@ -35,6 +35,7 @@ const DashboardCard = ({ userId }) => {
   const [regularPrice, setRegularPrice] = useState( parseFloat(sessionStorage.getItem("regularPrice")) || 0);
   let [regularLimit, setRegularLimit] = useState( parseFloat(sessionStorage.getItem("regularLimit")) || 0);
   const [penaltyLimit, setPenaltyLimit] = useState( parseFloat(sessionStorage.getItem("penaltyLimit")) || 0); 
+  const [addedLimit, setAddedLimit] = useState( parseFloat(sessionStorage.getItem("addedLimit")) || 0); 
 
   const [limitBYUser,  setLimitByUser] = useState( parseFloat(sessionStorage.getItem("limitBYUser")) || 0); // limit by user 
 
@@ -195,8 +196,37 @@ const DashboardCard = ({ userId }) => {
     };
   }, [userId]);
 
-  // check data is fetched or not ??
 
+    // for the added limit 
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const yearMonth = `${year}-${month}`;
+
+    const addonDocRef = doc(db, `users/${userId}/monthlyUsages/${yearMonth}/addon/addon_details`);
+    // fetch added limit 
+    useEffect(() => {
+      if (!userId) return;
+    
+      const fetchAddedLimit = async () => {
+        try {
+        const addonSnap = await getDoc(addonDocRef);
+          if (addonSnap.exists()) {
+            const addonData = addonSnap.data();
+            setAddedLimit(addonData.added_limit)
+          }else {
+            console.log("No added_limit document found.");
+          }
+        } catch (error) {
+          console.error("Error fetching addedLimit:", error);
+        }
+      };
+    
+      fetchAddedLimit();
+    }, [userId,limitBYUser ]);
+
+
+  // check data is fetched or not ??
   useEffect(() => {
     // Check if all data has been fetched
     if (isWaterFlowFetched && isPriceFetched && isLimitFetched) {
@@ -204,8 +234,6 @@ const DashboardCard = ({ userId }) => {
     }
   }, [isWaterFlowFetched, isPriceFetched, isLimitFetched]);
 
-  // Calculate the regular usage and penalty usage
-  // console.log(limitBYUser);
   regularLimit = limitBYUser ; 
   const regularUsage = Math.min(totalUsage, regularLimit);
   const penaltyUsage =
@@ -241,30 +269,41 @@ const DashboardCard = ({ userId }) => {
   };
   const navigate = useNavigate();
   const goToPayment = () => {
-    navigate("/user/pay");
+    navigate("/test/pay");
   };
   const goToGate = () => {
-    navigate("/user/gatecontrol");
+    navigate("/test/gatecontrol");
   };
   const goToComplain = () => {
-    navigate("/user/complain");
+    navigate("/test/complain");
   };
 
 
 
 
-  const isUsageExceeded = totalUsage >= maxLimit;
-  // console.log(maxLimit , totalUsage );
+  // const isUsageExceeded = totalUsage >= maxLimit;
+  // console.log(maxLimit , totalUsage , penaltyLimit);
+
   
-  const greenWidth = Math.min(totalUsage, regularLimit)||50;
-  const orangeWidth = Math.min(Math.max(totalUsage - regularLimit, 0), penaltyLimit - regularLimit)||20;
-  const redWidth = Math.min(Math.max(totalUsage - penaltyLimit, 0), maxLimit - penaltyLimit);
+const penaltyThreshold = regularLimit + penaltyLimit;        // 100 + 150 = 250
+const maxThreshold = penaltyThreshold + maxLimit;            // 250 + 400 = 650
+
+const cappedUsage = Math.min(totalUsage, maxThreshold);   
   
-  const getBarColor = () => {
-    if (totalUsage < regularLimit) return '#90EE90'; // Green
-    if (totalUsage >= regularLimit && totalUsage < maxLimit) return '#ff9900'; // Orange
-    return 'red'; // Red
-  };
+  // const greenWidth = Math.min(totalUsage, regularLimit)||50;
+  // const orangeWidth = Math.min(Math.max(totalUsage - regularLimit, 0), penaltyLimit - regularLimit)||20;
+  // const redWidth = Math.min(Math.max(totalUsage - penaltyLimit, 0), maxLimit - penaltyLimit);
+  
+  const greenWidth = Math.min(cappedUsage, regularLimit); 
+  // Up to 100
+  
+  const orangeWidth = Math.min(Math.max(cappedUsage - regularLimit, 0), penaltyLimit); 
+  // Between 100–250
+  
+  const redWidth = Math.max(cappedUsage - penaltyThreshold, 0); 
+  // Between 250–650
+  const totalBarWidth = regularLimit + penaltyLimit + addedLimit ;
+
 
 
   return (
@@ -331,24 +370,33 @@ const DashboardCard = ({ userId }) => {
               </div>
             </div>
           </div>
- 
-          {/* <div className="bar-container">
-            {(totalUsage<regularLimit)?(<div>bye</div>):(<div>{console.log("Total Usage:", totalUsage ,"max",  maxLimit , greenWidth)}</div>)}
-          </div> */}
-
-          <div className="bar-container">
-            {(totalUsage<regularLimit)?(
-            <div className="bar">
-              <div className="bar-green" style={{ width: `${(greenWidth / regularLimit) * 100}%` }}></div>
+          {/* <p>{addedLimit}</p> */}
+        <div className="bar-containers">
+          {totalUsage < regularLimit ? (
+            <div className="bars">
+              <div
+                className="bar-greens"
+                style={{ width: `${(greenWidth / regularLimit) * 100}%` }}
+              ></div>
             </div>
-             ):(
-              <div className="bar">
-                <div className="bar-green" style={{ width: `${(greenWidth / maxLimit) * 100}%` }}></div>
-                <div className="bar-orange" style={{ width: `${(orangeWidth / maxLimit) * 100}%` }}></div>
-                <div className="bar-red" style={{ width: `${(redWidth / maxLimit) * 100}%` }}></div>
-              </div>
-             )} 
-          </div>
+          ) : (
+            <div className="bars">
+              <div
+                className="bar-greens"
+                style={{ width: `${(greenWidth / totalBarWidth) * 100}%` }}
+              ></div>
+              <div
+                className="bar-oranges"
+                style={{ width: `${(orangeWidth / totalBarWidth) * 100}%` }}
+              ></div>
+              <div
+                className="bar-reds"
+                style={{ width: `${(redWidth / totalBarWidth) * 100}%` }}
+              ></div>
+            </div>
+          )}
+        </div>
+
 
               
         </div>
