@@ -4,6 +4,11 @@ An IoT-based solution for intelligent water management with real-time monitoring
 
 ---
 
+🎥 **[Watch Project Demo Video](https://drive.google.com/file/d/1bc1kWJXzAJOv_yFu3mCMb4uNGVxG7l2v/view?usp=sharing)**  
+🌐 **[Goto Live Website](https://dwwp-20-git-main-akash-beras-projects-53418e47.vercel.app/)**
+
+---
+
 ## Table of Contents
 - [Key Features](#key-features)
 - [System Architecture](#system-architecture)
@@ -101,7 +106,9 @@ users/ [Collection]
     ├── servoState: boolean
     ├── lastSeen: timestamp
     ├── notification: string
-    ├── userDetails: array
+    ├── userDetails: <map data> {fullName , mobileNo , emailId (optinal), address ,accountNumber, consumerNumber, meterNumber, supplyZone}
+    ├── wifi_pass
+    ├── wifi_ssid
     └── monthlyUsages/ [Subcollection]
         └── {YYYY-MM}/ [Document]
             ├── isMonthFinish: boolean
