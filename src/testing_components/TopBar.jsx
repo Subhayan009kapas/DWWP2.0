@@ -19,7 +19,9 @@ const TopBar = () => {
   const [userDetails, setUserDetails] = useState({
     name: "",
     address: "",
-    phone: ""
+    phone: "",
+    aadhar:"",
+
   });
 
   const getGravatarUrl = (userEmail) => {
@@ -48,8 +50,9 @@ const TopBar = () => {
             setUsername(userData.userDetails?.[0] || "User");
             setUserDetails({
               name: userData.userDetails?.[0] || "",
-              address: userData.userDetails?.[1] || "",
-              phone: userData.userDetails?.[2] || ""
+             
+              phone:  userData.userDetails?.[1]|| "",
+              aadhar:userData.userDetails?.[2] || "",
             });
           }
         } catch (error) {
@@ -128,15 +131,7 @@ const TopBar = () => {
                     onChange={handleInputChange}
                   />
                 </div> */}
-                <div className="form-group">
-                  <label>Address:</label>
-                  <input
-                    type="text"
-                    name="address"
-                    value={userDetails.address}
-                    onChange={handleInputChange}
-                  />
-                </div>
+               
                 <div className="form-group">
                   <label>Phone Number:</label>
                   <input
@@ -144,6 +139,16 @@ const TopBar = () => {
                     name="phone"
                     value={userDetails.phone}
                     onChange={handleInputChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Aadhar No:</label>
+                  <input
+                    type="tel"
+                    name="aadhar"
+                    value={userDetails.aadhar}
+                    onChange={handleInputChange}
+                    disabled
                   />
                 </div>
                 <div className="modal-actions">

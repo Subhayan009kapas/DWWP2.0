@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./Servo_Control.css";
 import ToggleSwitch from "./ToggleSwitch";
+// import DirectChangeDB from "../utils/DirectChangeDB";
 
 const Servo_Control = ({userId}) => {
   return (
@@ -30,7 +31,10 @@ const Servo_Control = ({userId}) => {
           <ToggleSwitch userId={userId} />
         </div>
       </motion.div>
+      {/* <DirectChangeDB userId={userId} /> */}
     </motion.div>
+
+    
   );
 };
 
